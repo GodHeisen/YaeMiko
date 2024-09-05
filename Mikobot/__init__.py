@@ -59,11 +59,11 @@ ENV = bool(os.environ.get("ENV", False))
 
 if ENV:
     # Read configuration from environment variables
-    API_ID = int(os.environ.get("API_ID", None))
-    API_HASH = os.environ.get("API_HASH", None)
+    API_ID = 23217599
+    API_HASH = "d3113e7ba66c7f9ddb065a3d71c298e0"
     ALLOW_CHATS = os.environ.get("ALLOW_CHATS", True)
     ALLOW_EXCL = os.environ.get("ALLOW_EXCL", False)
-    DB_URI = os.environ.get("DATABASE_URL")
+    DB_URI = "postgresql://levi:levi@localhost/levibot"
     DEL_CMDS = bool(os.environ.get("DEL_CMDS", False))
     BAN_STICKER = bool(os.environ.get("BAN_STICKER", True))
     EVENT_LOGS = os.environ.get("EVENT_LOGS", None)
@@ -71,14 +71,14 @@ if ENV:
     MESSAGE_DUMP = os.environ.get("MESSAGE_DUMP", None)
     DB_NAME = os.environ.get("DB_NAME", "MikoDB")
     LOAD = os.environ.get("LOAD", "").split()
-    MONGO_DB_URI = os.environ.get("MONGO_DB_URI")
+    MONGO_DB_URI = "mongodb+srv://ChauhanSaarthi:Heisen*#0003@cluster0.ip0hi.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
     NO_LOAD = os.environ.get("NO_LOAD", "").split()
     STRICT_GBAN = bool(os.environ.get("STRICT_GBAN", True))
-    SUPPORT_ID = int(os.environ.get("SUPPORT_ID", "-100"))  # Support group id
-    SUPPORT_CHAT = os.environ.get("SUPPORT_CHAT", "Ecstasy_Realm")
+    SUPPORT_ID = int(os.environ.get("SUPPORT_ID", "-1002180149684"))  # Support group id
+    SUPPORT_CHAT = os.environ.get("SUPPORT_CHAT", "Godl_FC")
     TEMP_DOWNLOAD_DIRECTORY = os.environ.get("TEMP_DOWNLOAD_DIRECTORY", "./")
-    TOKEN = os.environ.get("TOKEN", None)
-
+    TOKEN = "7361120655:AAEX8kiTZhXXkQgjnT5xCXMgYV9jioePy0I"
+    
     # Read and validate integer variables
     try:
         OWNER_ID = int(os.environ.get("OWNER_ID", None))
@@ -114,12 +114,12 @@ else:
     # Use configuration from a separate file (e.g., variables.py)
     from variables import Development as Config
 
-    API_ID = Config.API_ID
-    API_HASH = Config.API_HASH
+    API_ID = 23217599
+    API_HASH = "d3113e7ba66c7f9ddb065a3d71c298e0"
     ALLOW_CHATS = Config.ALLOW_CHATS
     ALLOW_EXCL = Config.ALLOW_EXCL
     DB_NAME = Config.DB_NAME
-    DB_URI = Config.DATABASE_URL
+    DB_URI = "postgresql://levi:levi@localhost/levibot"
     BAN_STICKER = Config.BAN_STICKER
     MESSAGE_DUMP = Config.MESSAGE_DUMP
     SUPPORT_ID = Config.SUPPORT_ID
@@ -127,12 +127,12 @@ else:
     EVENT_LOGS = Config.EVENT_LOGS
     INFOPIC = Config.INFOPIC
     LOAD = Config.LOAD
-    MONGO_DB_URI = Config.MONGO_DB_URI
+    MONGO_DB_URI = "mongodb+srv://ChauhanSaarthi:Heisen*#0003@cluster0.ip0hi.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
     NO_LOAD = Config.NO_LOAD
     STRICT_GBAN = Config.STRICT_GBAN
     SUPPORT_CHAT = Config.SUPPORT_CHAT
     TEMP_DOWNLOAD_DIRECTORY = Config.TEMP_DOWNLOAD_DIRECTORY
-    TOKEN = Config.TOKEN
+    TOKEN = "7361120655:AAEX8kiTZhXXkQgjnT5xCXMgYV9jioePy0I"
 
     # Read and validate integer variables
     try:
@@ -176,7 +176,7 @@ DEV_USERS.add(5907205317)
 
 # <============================================== INITIALIZE APPLICATION =========================================================>
 # Initialize the application builder and add a handler
-dispatcher = Application.builder().token(TOKEN).build()
+dispatcher = Application.builder().token(token=TOKEN).build()
 function = dispatcher.add_handler
 # <=======================================================================================================>
 
@@ -229,7 +229,7 @@ loop.run_until_complete(
 
 # <=============================================== CLIENT SETUP ========================================================>
 # Create the Mikobot and TelegramClient instances
-app = Client("Mikobot", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
+app = Client("Mikobot", api_id=API_ID, api_hash=API_HASH, bot_token="7361120655:AAEX8kiTZhXXkQgjnT5xCXMgYV9jioePy0I")
 tbot = TelegramClient("Yaebot", API_ID, API_HASH)
 # <=======================================================================================================>
 
